@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const gridSize = 10;
-    const maxReveals = 5;
+    const maxReveals = 8;
     let revealsLeft = maxReveals;
     let wordData = {};
     let grid = [];
@@ -12,16 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const dayOfYear = getDayOfYear();
                 wordData = data.words[dayOfYear.toString()]; // Get word data for the day
-                if (wordData && wordData.positions) {
+                
+                // Check if wordData is loaded properly
+                if (wordData && wordData.word) {
+                    // Inform the player about the number of letters in the word
+                    alert(`Today's word has ${wordData.word.length} letters.`);
                     initializeGrid(); // Initialize grid after data is loaded
                 } else {
-                    console.error('Data format incorrect or missing positions');
+                    console.error('Data format incorrect or missing word data');
                 }
             })
             .catch(error => {
                 console.error('Error loading word data:', error);
             });
     }
+
 
     // Get day of the year
     function getDayOfYear() {
