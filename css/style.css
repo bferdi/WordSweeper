@@ -1,0 +1,131 @@
+:root {
+    --epcl-font-family: "Jost","Source Sans Pro",serif;
+    --epcl-title-font-family: "Outfit",sans-serif;
+    --epcl-title-font-weight: 800;
+    --epcl-sidebar-title-font-family: "Outfit",sans-serif;
+    --epcl-sidebar-title-font-weight: 800;
+    --epcl-font-size: 16px;
+    --epcl-main-color: #FF4C60;
+    --epcl-secondary-color: #FED267;
+    --epcl-titles-color: #333;
+    --epcl-text-color: #353A44;
+    --epcl-black-color: #333;
+    --epcl-background-color: #54CBCA;
+    --epcl-content-background-color: #FFFACD;
+    --epcl-boxes-border-radius: 15px;
+    --epcl-border-color: rgba(39,39,39,0.75);
+    --epcl-boxes-shadow: 0px 0px 0px 0px #333;
+    --epcl-small-shadow: 2px 2px 0px 0px #333;
+    --epcl-medium-shadow: 4px 4px 0px 0px #333;
+    --epcl-transition-bezier: cubic-bezier(.5,2.5,.7,.7);
+}
+  
+body {
+  background:#FFFACD;  
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a shadow under the header */
+}
+
+.logo {
+    max-width: 200px; /* Adjust as needed for your logo's size */
+    height: auto; /* This will ensure the logo keeps its aspect ratio */
+}
+
+#reveals-display {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 1.2em;
+    color: #333; /* Or any color that fits your design */
+    background-color: #f8f8f8; /* Light background for the display */
+    border-radius: 5px; /* Rounded corners for the display */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for some depth */
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto; /* This will center the display if its width is less than its container */
+}
+
+
+#guess-button{
+ 
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 25px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 2;
+    font-family: var(--epcl-font-family);
+    font-weight: 700;
+    border-radius: 25px;
+    border: 1px solid var(--epcl-border-color);
+    background-color: var(--epcl-main-color);
+    -webkit-transition: all 300ms var(--epcl-transition-bezier);
+    transition: all 300ms var(--epcl-transition-bezier);
+}
+
+#guess-input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin-top: 35px;
+    max-width: 130%;
+}
+
+#game-container {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #54CBCA; /* Adjust the color to match your card's background */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* This adds a subtle shadow to the container */
+    border-radius: 10px; /* This rounds the corners of the container */
+    font-family: 'Arial', sans-serif; /* This is a placeholder, match the font to your cards */
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+    padding: 20px;
+    background: #f9f9f9; /* This sets the background of the grid, adjust as needed */
+    border-radius: 10px; /* Rounds the corners of the grid */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1); /* Optionally adds an inset shadow to the grid */
+}
+
+.grid-item {
+    width: 50px; /* You may want to adjust this to fit your container */
+    height: 50px; /* You may want to adjust this to fit your container */
+    background-color: #f0f0f0; /* This sets the background of the grid items */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px; /* Rounds the corners of the grid items */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow to grid items */
+    transition: transform 0.2s; /* Smooth transition for hover effects */
+}
+
+.grid-item:hover {
+    transform: scale(1.1); /* Scales up grid items on hover */
+    background-color: #e0e0e0; /* Optionally changes color on hover */
+}
+
+/* Add responsive behavior */
+@media (max-width: 768px) {
+    #game-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .grid-item {
+        width: 40px; /* Smaller size on smaller screens */
+        height: 40px; /* Smaller size on smaller screens */
+    }
+}
+
+
