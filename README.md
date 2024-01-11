@@ -20,7 +20,7 @@ The objective of the game is to find a hidden word within a grid. Players reveal
 ## How to Play
 1. Click on any square in the grid to reveal clues.
 2. Each non-letter square will show a number indicating the distance to the nearest letter.
-3. You have only 5 reveals each play to use wisely.
+3. You have only 8 reveals each play to use wisely.
 4. After your reveals are used, guess the word.
 
 ## Technology
